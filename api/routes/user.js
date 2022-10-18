@@ -25,9 +25,9 @@ router.post('/singin', (req, res) => {
             if(rows.length > 0){
                 let data = JSON.stringify(rows[0]);
                 const token = jwt.sign(data,'stil');
-                res.json("ok");
+                res.json(token);
             }else{
-                res.json('Usuario o contraseña inválidos');
+                res.json('Invalid');
             }
         }else{
             console.log(err);
